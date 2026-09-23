@@ -1,0 +1,8 @@
+{
+  "extraKnownMarketplaces": {
+    "fancy": {
+      "source": { "source": "github", "repo": "FancysauceAI/fancy" }
+    }
+  },
+  "enabledPlugins": { "fancysauce-savings-preview@fancy": true }
+}

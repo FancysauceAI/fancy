@@ -1,0 +1,19 @@
+{
+  "name": "fancysauce-savings-preview",
+  "description": "Usage analytics for OpenAI Codex CLI",
+  "version": "0.18.0",
+  "author": {
+    "name": "FancysauceAI"
+  },
+  "homepage": "https://github.com/FancysauceAI/fancytab",
+  "repository": "https://github.com/FancysauceAI/fancytab",
+  "license": "MIT",
+  "hooks": "./hooks.json",
+  "keywords": [
+    "observability",
+    "cost",
+    "analytics",
+    "otel",
+    "codex"
+  ]
+}
