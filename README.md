@@ -2,7 +2,7 @@
 
 Usage analytics for Claude Code and OpenAI Codex CLI.
 
-**Version:** 0.18.1
+**Version:** 0.18.2
 
 This repo is the canonical distribution for both the Claude Code plugin and the
 OpenAI Codex plugin. Each tool installs only its own plugin.
@@ -10,14 +10,22 @@ OpenAI Codex plugin. Each tool installs only its own plugin.
 ## What this build ships
 
 This is the hooks-only preview channel. It carries the cross-compiled Go
-collector at `bin/fancysauce` and the hook declarations that call it, and
-nothing else: no slash commands, no skills, no statusline and no MCP server.
+collector at `bin/fancysauce`, the hook declarations that call it, and the
+slash commands
+`/fancysauce-savings-preview:login`,
+`/fancysauce-savings-preview:upload-history` and
+`/fancysauce-savings-preview:reset`, which run that same binary — no skills, no statusline and no
+MCP server.
 **No Node runtime is required** — capture is one static binary per platform.
 
 **Windows machines need Git Bash on `PATH`.** The hook command is
 `bash "${CLAUDE_PLUGIN_ROOT}/bin/fancysauce" collect --agent claude-code`
 (`--agent codex` in Codex), and without a `bash` the hook fails and nothing is
 captured. Git for Windows supplies one.
+
+**Where PowerShell is Claude Code's registered shell**, the commands run
+`& "$env:CLAUDE_PLUGIN_ROOT\bin\windows-amd64\fancysauce.exe" login` directly, and
+likewise for the other commands.
 
 ### What leaves the machine
 
@@ -46,6 +54,7 @@ To install and setup the plugin in Claude Code:
 /plugin marketplace add FancysauceAI/fancy
 /plugin install fancysauce-savings-preview@fancy
 /reload-plugins
+/fancysauce-savings-preview:login
 ```
 
 ## OpenAI Codex

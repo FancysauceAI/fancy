@@ -2,6 +2,23 @@
 
 All public releases of `fancysauce-savings`. Most recent first.
 
+## v0.18.2 — 2026-09-24
+
+### Highlights
+
+- **Slash commands without Node.js.** The Go collector now implements `login`, `upload-history` and `reset` itself, byte-for-byte with the Node commands (golden fixtures captured from the Node binaries, re-checked in CI). Channels whose hooks run from the Go binary ship the command files rendered against the launcher, so `/…:login` works on a machine with no Node.js at all, from the Bash tool or from PowerShell. The `fancy` preview channel now ships the commands by default while staying hooks-only. (FAN-1307, #188, #189)
+- **Safer publishes.** A hooks-only publish that ships commands is refused unless the linked collector answers `upload-history --status` correctly and reports the baked dashboard origin, so a build can never advertise a command or a sign-in target it does not carry. (#189)
+- **Historical scan respected on demand.** `upload-history --scan` refuses on a build published with the historical scan disabled, closing the replay path FAN-1178 guards against. (#188)
+
+### Features
+
+- feat(go): login, upload-history and reset subcommands so the Go channels need no Node (FAN-1307) (#188)
+- feat(publish): hooks-only Go builds ship the slash commands rendered against the launcher (FAN-1307) (#189)
+
+### Fixes
+
+- test(package): expect the release zip named after the current package version
+
 ## v0.18.1 — 2026-09-23
 
 ### Highlights
