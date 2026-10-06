@@ -54,7 +54,7 @@ Code whose registered shell is PowerShell runs them against the per-target
 binary directly:
 
 ```powershell
-& "$env:CLAUDE_PLUGIN_ROOT\bin\windows-amd64\fancysauce.exe" login
+& "$env:CLAUDE_PLUGIN_ROOT\bin\windows-amd64\fancysauce.exe" setup
 & "$env:CLAUDE_PLUGIN_ROOT\bin\windows-amd64\fancysauce.exe" upload-history
 & "$env:CLAUDE_PLUGIN_ROOT\bin\windows-amd64\fancysauce.exe" reset
 ```

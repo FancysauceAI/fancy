@@ -2,6 +2,21 @@
 
 All public releases of `fancysauce-savings`. Most recent first.
 
+## v0.19.0 — 2026-10-06
+
+### Features
+
+- feat(publish,go): url-flow variant for hooks-only fancy, unprefixed Go commands (login→setup), fancysauce.plugin (#206)
+- feat: GitLab MR capture and the PID guard fix, combined (FAN-1593, FAN-1601) (#205)
+- feat(claude-code): send a list of PR references per event in both runtimes (FAN-1035) (#157)
+- feat(claude-code): widen the GitHub PR reference URL forms in both runtimes (FAN-1036) (#156)
+
+### Fixes
+
+- fix(claude-code): review follow-ups for the PR reference list, both runtimes (FAN-1035) (#191)
+- fix(hooks): unset the local git environment before the pre-push tests (#155)
+- fix: record a PR reference only for a command that acts on the PR (FAN-1139) (#190)
+
 ## v0.18.2 — 2026-09-24
 
 ### Highlights
